@@ -4,7 +4,9 @@ import styled from 'styled-components';
 import Navbar from "./Navbar"
 import Sidebar from "./Sidebar"
 import Footer from "./Footer"
+import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
 
+deckDeckGoHighlightElement();
 const StyledLayout = styled.main` 
  max-width: var(--max-width);
  margin : 0 auto; 
@@ -14,8 +16,9 @@ const StyledLayout = styled.main`
   min-height: calc(100vh - 5rem - 11rem);
  
  }
-   
-`
+  `
+
+
 const Layout = ({ children }) => {
   return (
     <StyledLayout>
