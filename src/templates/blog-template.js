@@ -29,7 +29,7 @@ const StyledTemplate = styled.section`
       margin-bottom: 2rem;
     }
     .content{
-      background: var(--theme-bg-2);
+      background: rgba(50,50,50,.1);
       padding: 1rem;
       border-radius: var(--radius)
     }

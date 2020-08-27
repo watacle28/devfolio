@@ -4,7 +4,8 @@ import Links from "../constants/links"
 import SocialLinks from "../constants/socialLinks"
 import {FaCode,  FaHome, FaBriefcase, FaRegUser, FaPenSquare } from "react-icons/fa"
 import {BsChatSquareDots} from 'react-icons/bs'
-import {ImProfile} from 'react-icons/'
+import { Link } from "gatsby";
+
 
 const StyledSideBar = styled.div`
  
@@ -72,14 +73,14 @@ Sidebar Animation
 }
 `
 const Sidebar = () => {
-  const [active, setActive] = useState(false);
+  const [active, setActive] = useState(true);
   return 	<div className={`nav ${active ? 'active': ''}`}>
-  <a href="#contact" data-tooltip='Contact' className="nav-item nav-count-1"><BsChatSquareDots/></a>
-  <a href="#about"  data-tooltip='About' className="nav-item nav-count-2"><FaRegUser/></a>
-  <a href="#blog"  data-tooltip='Blog' className="nav-item nav-count-3"><FaPenSquare/></a>
-  <a href="#projects"  data-tooltip='Projects' className="nav-item nav-count-4"><FaBriefcase/></a>
-  <a title='skills'  data-tooltip='Skills' href="#skills" className="nav-item nav-count-5"><FaCode/></a>
-  <a href="#"  data-tooltip='Home' className="nav-item nav-count-6"><FaHome/></a>
+  <Link to="/#contact" data-tooltip='Contact' className="nav-item nav-count-1"><BsChatSquareDots/></Link>
+  <Link to="/#about"  data-tooltip='About' className="nav-item nav-count-2"><FaRegUser/></Link>
+  <Link to="/#blog"  data-tooltip='Blog' className="nav-item nav-count-3"><FaPenSquare/></Link>
+  <Link to="/#projects"  data-tooltip='Projects' className="nav-item nav-count-4"><FaBriefcase/></Link>
+  <Link  data-tooltip='Skills' to="/#skills" className="nav-item nav-count-5"><FaCode/></Link>
+  <Link to="/"  data-tooltip='Home' className="nav-item nav-count-6"><FaHome/></Link>
   <a  className="mask" onClick={()=>setActive(!active)}>+</a>
 </div>
 
