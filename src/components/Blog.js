@@ -2,10 +2,13 @@ import React from "react"
 import styled from 'styled-components'
 import PropTypes from "prop-types"
 import Image from "gatsby-image"
+import dayjs from 'dayjs';
 import { Link } from "gatsby"
 
 const StyledBlog = styled.div`
+min-width: 300px;
 flex: calc(1 / 3);
+margin-bottom: 1rem;
  .card {
   position: relative;
   height: 350px;
@@ -56,30 +59,15 @@ flex: calc(1 / 3);
  .img__container{
    position:relative;
    height: 100%;
+ 
    img{
-    opacity: 1;
+   
     object-fit:cover;
 		transition: opacity .5s, transform .5s;
     transform: scale(1);
     
 	}
-  .tags{
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  display: flex;
-
-.tag {
-	height: 25px;
-	padding: 0 15px;
-	background: var(--primary-1);
-	color: var(--theme-white);
-  margin-right:1rem;
-  border-radius: var(--radius);
-  opacity: .5;
-	
-}
- }
+ 
 	
  }
 }
@@ -127,8 +115,8 @@ const Blog = ({blog}) => {
     </div>
 		</header>
 		<div className="card__date">
-			<span className="card__date__day">23</span>
-			<span className="card__date__month">Aug</span>
+<span className="card__date__day">{dayjs(blog.created_at).format('DD')}</span>
+			<span className="card__date__month">{dayjs(blog.created_at).format('MMM')}</span>
 		</div>
 		<div className="card__body">
 	

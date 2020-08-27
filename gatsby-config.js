@@ -11,12 +11,13 @@ module.exports = {
     author: "Cleopas T. Wangayi",
     twitterUsername: "@watacle28",
     image: "/twitter-img.png",//to do
-    siteUrl: "https://testing-strapi-gatsby-build.netlify.app", //to do
+     //siteUrl: "watacle.netlify.app"
   },
   plugins: [
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -31,8 +32,7 @@ module.exports = {
         plugins: [
           {
             resolve: `gatsby-remark-highlight-code`
-          
-          },
+           }
         ],
       },
     },

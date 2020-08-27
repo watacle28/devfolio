@@ -37,6 +37,7 @@ export const Blogs = () => {
               }
             }
           }
+          created_at
           id
           desc
           content
@@ -52,7 +53,7 @@ export const Blogs = () => {
   `)
  
   return    (
-     <StyledBlogs> 
+     <StyledBlogs id='blog'> 
     <h2 className='section-title'>Latest Blog Posts</h2>
 <div className="posts">
 {data.allStrapiBlogs.nodes.map(blog => <Blog blog={blog}/>)}

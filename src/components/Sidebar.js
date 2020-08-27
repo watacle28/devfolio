@@ -1,61 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from 'styled-components'
 import Links from "../constants/links"
 import SocialLinks from "../constants/socialLinks"
-import { FaTimes } from "react-icons/fa"
+import {FaCode,  FaHome, FaBriefcase, FaRegUser, FaPenSquare } from "react-icons/fa"
+import {BsChatSquareDots} from 'react-icons/bs'
+import {ImProfile} from 'react-icons/'
 
 const StyledSideBar = styled.div`
-  .sidebar {
-  background: var(--clr-grey-10);
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 999;
-  display: grid;
-  place-items: center;
-  opacity: 0;
-  transition: var(--transition);
-  transform: translateX(-100%);
-}
-.show-sidebar {
-  opacity: 1;
-  transform: translateX(0);
-}
-.sidebar-links li {
-  opacity: 0;
-}
-.sidebar-links li a {
-  display: block;
-  text-align: center;
-  text-transform: capitalize;
-  color: var(--clr-grey-5);
-  letter-spacing: var(--spacing);
-  margin-bottom: 0.5rem;
-  font-size: 2rem;
-  transition: var(--transition);
-  border-radius: var(--radius);
-}
-.sidebar-links li a:hover {
-  background: var(--clr-primary-9);
-  color: var(--clr-primary-5);
-}
-.close-btn {
-  position: absolute;
-  right: 4.75%;
-  top: 2.75%;
-  font-size: 2.5rem;
-  background: transparent;
-  border-color: transparent;
-  color: var(--clr-red-dark);
-  cursor: pointer;
-}
-@media screen and (min-width: 992px) {
-  .sidebar {
-    transform: translateX(-100%);
-  }
-}
+ 
 /*
 =============== 
 Sidebar Animation
@@ -120,7 +72,17 @@ Sidebar Animation
 }
 `
 const Sidebar = () => {
-  return <h2>sidebar component</h2>
+  const [active, setActive] = useState(false);
+  return 	<div className={`nav ${active ? 'active': ''}`}>
+  <a href="#contact" data-tooltip='Contact' className="nav-item nav-count-1"><BsChatSquareDots/></a>
+  <a href="#about"  data-tooltip='About' className="nav-item nav-count-2"><FaRegUser/></a>
+  <a href="#blog"  data-tooltip='Blog' className="nav-item nav-count-3"><FaPenSquare/></a>
+  <a href="#projects"  data-tooltip='Projects' className="nav-item nav-count-4"><FaBriefcase/></a>
+  <a title='skills'  data-tooltip='Skills' href="#skills" className="nav-item nav-count-5"><FaCode/></a>
+  <a href="#"  data-tooltip='Home' className="nav-item nav-count-6"><FaHome/></a>
+  <a  className="mask" onClick={()=>setActive(!active)}>+</a>
+</div>
+
 }
 
 export default Sidebar

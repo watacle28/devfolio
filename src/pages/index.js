@@ -2,12 +2,11 @@ import React,{useEffect} from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import Hero from "../components/Hero"
-import Services from "../components/Services"
-import Jobs from "../components/Jobs"
 import Projects from "../components/Projects"
 import Blogs from "../components/Blogs"
 import Skills from "../components/Skills"
 import Contact from "../components/Contact"
+import About from '../components/About'
 export default () => {
  
   return <Layout>
@@ -15,6 +14,7 @@ export default () => {
   <Skills/>
  <Projects/>
  <Blogs/>
+ <About/>
  <Contact/>
   </Layout>
 }

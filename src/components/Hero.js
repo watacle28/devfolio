@@ -3,7 +3,7 @@ import Image from "gatsby-image"
 import { Link } from "gatsby"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from 'styled-components';
-import clo from '../assets/clo.png'
+import clo from '../../static/clo.png'
 import SocialLinks from "../constants/socialLinks"
 import { StyledBtn } from "./StyledBtn";
 // ...GatsbyImageSharpFluid
@@ -38,12 +38,13 @@ const StyledHero = styled.div`
      
      background:var(--theme-gradient);
      border-radius: 50%;
-     padding: 1rem;
+     padding: 5rem;
      img{
        width: 100%;
        height: auto;
        border-radius: 50%;
        object-fit: contain;
+    
      }
    }
    
@@ -85,7 +86,7 @@ const Hero = () => {
      <div className="right">
        <div className="image">
         
-        {/* <img src={clo} alt="cleopas"/> */}
+        <img src={clo} alt="cleopas"/>
        </div>
      </div>
      </StyledHero>

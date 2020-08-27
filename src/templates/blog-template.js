@@ -1,17 +1,59 @@
-import React from "react"
+import React ,{useEffect} from "react"
 import { graphql, Link } from "gatsby"
+import Image from 'gatsby-image'
+import styled from 'styled-components';
 import Layout from "../components/Layout"
-// import 'prismjs/themes/prism-twilight.css'
+ import 'prismjs/themes/prism-tomorrow.css'
+ import Prism from 'prismjs'
 import ReactMarkdown from "react-markdown"
+import { FaBackward } from "react-icons/fa";
 
+const StyledTemplate = styled.section`
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+    border: var(--theme-border);
+    border-radius:var(--radius);
+    pre[class*="language-"] {
+    background: #000;
+    border-radius: var(--radius)
+}
+    img{
+      border-radius: var(--radius);
+    }
+    .post-body{
+      padding: 1rem;
+    }
+    .tags{
+      position:initial;
+      margin-bottom: 2rem;
+    }
+    .content{
+      background: var(--theme-bg-2);
+      padding: 1rem;
+      border-radius: var(--radius)
+    }
+`
 
 const MyTemplate = ({data}) => {
-  console.log({data});
+ useEffect(() => {
+   if(data && data.blog.content){
+     Prism.highlightAll()
+   }
+ }, [data && data.blog.content])
   return <Layout>
-    <h2>{data.blog.title}</h2>
-    <img src={data.blog.image.childImageSharp.fluid.src}/>
-    <ReactMarkdown source={data.blog.content}/>
-  
+    <StyledTemplate>
+    <Image fluid={data.blog.image.childImageSharp.fluid}/>
+   <div className="post-body">
+   <h2>{data.blog.title}</h2>
+  <div className="tags"> {data.blog.tags.map(tag => <span className='tag' key={tag.id}>{tag.tag}</span>)}</div>
+   <blockquote className='blockquote'>{data.blog.desc}</blockquote>
+   <ReactMarkdown className='content' source={data.blog.content}/>
+
+   </div>
+   
+  <Link to='/#blog'><div className="theme_btn"> <FaBackward/> Back</div></Link>
+    </StyledTemplate>
    
   </Layout>
 }
@@ -28,6 +70,7 @@ export const query = graphql`
         }
       }
       title
+      desc
       tags {
         id
         tag
