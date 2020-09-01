@@ -16,7 +16,8 @@ Variables
   /* css variables */
 --theme-bg-1:#060511;
 --theme-bg-2:#191919;
---theme-inactive:#9ea1a1;
+--theme-inactive:rgba(50,50,50,.1);
+--faint : rgba(255,255,255,.05);
 --white: #edf2f4ff;
 --primary-2: #f10f9d;
 --primary-1: #f10f4b;
@@ -26,7 +27,8 @@ Variables
 --spacing: 0.2rem;
 --radius: .25rem;
 --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
---dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+--dark-shadow:  2px 2px 12px 12px rgba(0,0,0,0.25);
+
 --max-width: 1440px;
 --fixed-width: 700px;
 --theme-gradient-1: linear-gradient(180deg, #f81f01 0%, #ee076e 50%);
@@ -123,7 +125,7 @@ img{
 .section-title{
   position: relative;
   font-size: 4rem;
-  color: var(--theme-inactive);
+  color: var(--faint);
   font-weight:900;
   margin-top: 1rem;
   margin-bottom: 1.5rem;
@@ -154,8 +156,8 @@ img{
 }
 .section{
  
-  padding-top: 3rem;
-  padding-bottom: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
 }
 .theme-gradient {
   
@@ -283,14 +285,13 @@ img{
 	
 }
 .blockquote{
-  font-size: 1.4em;
+  
   width:100%;
-  margin:50px auto;
-  font-family:Open Sans;
+  margin:1rem auto;
+  /* font-family:Open Sans; */
   font-style:italic;
   color: #555555;
-  padding:1.2em 30px 1.2em 75px;
-  /* border-left:8px solid var(--theme-inactive); */
+  padding: 2rem 1rem 1rem 2rem;
   line-height:1.6;
   position: relative;
  
@@ -429,7 +430,8 @@ Sidebar
   transition: all .3s cubic-bezier(.68, 1.55, .265, 1)
 }
 
-.nav-item:hover::before{
+.nav-item::before{
+  opacity:0;
   content: attr(data-tooltip);
   position: absolute;
   left: -5rem;
@@ -441,6 +443,10 @@ Sidebar
   line-height: 1rem;
   transform: translateY(50%);
   width:80px;
+  transition: all 1s cubic-bezier(.68, 1.55, .265, 1)
+}
+.nav-item:hover::before{
+  opacity: 1;
 }
 .nav.active .nav-count-1 {
   /* transform: translate(10px, -100px) */
@@ -528,25 +534,13 @@ Pages
   background: var(--clr-grey-10);
  
 }
-.error-page {
-  display: grid;
-  place-items: center;
-  background: var(--clr-primary-10);
-  text-align: center;
-}
-.error-page h1 {
-  text-transform: uppercase;
-  color: var(--clr-primary-1);
-  margin-bottom: 2rem;
-}
+
 /*
 ===============
 Blog Page
 ===============
 */
-.blog-page .blog {
-  background: var(--clr-white);
-}
+
 /*
 ===============
 About Page

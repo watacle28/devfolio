@@ -14,7 +14,6 @@ export default () => {
   <Skills/>
  <Projects/>
  <Blogs/>
- <About/>
  <Contact/>
   </Layout>
 }

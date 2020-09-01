@@ -8,18 +8,21 @@ import { Link } from "gatsby"
 const StyledBlog = styled.div`
 min-width: 300px;
 flex: calc(1 / 3);
-margin-bottom: 1rem;
+margin: 2rem;
  .card {
   position: relative;
   height: 350px;
   box-shadow: 0 0 20px rgba(var(--theme-white),0.1);
-  border: var(--theme-border);
+  border: 1px solid var(--faint);
   border-radius:var(--radius);
   margin: 0 1rem;
-	&:hover .img__container img{
+  overflow: hidden;
+  transition: all .5s ease-in-out;
+	&:hover{
 		
 		opacity: 0.6;
-		transform: scale(1.2);
+		transform: scale(1.05);
+		z-index: 20;
 
 	}
 
@@ -63,7 +66,7 @@ margin-bottom: 1rem;
    img{
    
     object-fit:cover;
-		transition: opacity .5s, transform .5s;
+	transition: all .5s ease-in-out;
     transform: scale(1);
     
 	}
@@ -90,7 +93,8 @@ margin-bottom: 1rem;
 }
 
 .card__description {
-color: var(--theme-inactive)
+color: white;
+opacity: .6;
 	
 	
 }
@@ -98,6 +102,8 @@ color: var(--theme-inactive)
 .theme_btn_secondary{
   display: inline-block;
   transition: all .5s linear;
+  font-weight: 700;
+  letter-spacing: 1.5px;
 }
 
 
@@ -125,7 +131,7 @@ const Blog = ({blog}) => {
 <p className="card__description"> {blog.desc && blog.desc}</p>
       <Link to={`/blogs/${blog.slug}`}>
       <div className="theme_btn_secondary">
-      Read More
+      Read More . . .
     </div>
       </Link>
 		</div>

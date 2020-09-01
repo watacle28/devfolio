@@ -7,7 +7,7 @@ import Sidebar from "./Sidebar";
 const StyledFooter = styled.div`
  
   height: 11rem;
- color: var(--theme-inactive);
+ /* color: var(--theme-inactive); */
  
   display: flex;
   flex-direction:column;
@@ -21,11 +21,11 @@ p{
     }
   }
   a{
-   color: var(--white);
+    color: var(--primary-1);
    transition: var(--transition);
    font-weight: 700;
    &:hover{
-     color: var(--primary-1);
+     
      opacity: .4;
    }
  }

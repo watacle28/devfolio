@@ -16,7 +16,7 @@ margin : 2rem auto;
   font-weight: 700;
   padding: 1rem;
   border-radius: .5rem;
-  border:var(--theme-border);
+  border:1px solid rgba(255,255,255,.05);
   outline: none;
   margin-bottom:1rem;
   color: var(--white);

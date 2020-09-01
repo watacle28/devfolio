@@ -12,7 +12,7 @@ const StyledTemplate = styled.section`
     width: 100%;
     max-width: 800px;
     margin: 2rem auto;
-    border: var(--theme-border);
+    border: 1px solid var(--faint);
     border-radius:var(--radius);
     pre[class*="language-"] {
     background: #000;
@@ -33,6 +33,11 @@ const StyledTemplate = styled.section`
       padding: 1rem;
       border-radius: var(--radius)
     }
+    .theme_btn{
+      display: block;
+      width: max-content;
+      margin: auto;
+    }
 `
 
 const MyTemplate = ({data}) => {
@@ -52,7 +57,7 @@ const MyTemplate = ({data}) => {
 
    </div>
    
-  <Link to='/#blog'><div className="theme_btn"> <FaBackward/> Back</div></Link>
+  <Link to='/#blog'><div className="theme_btn">Back</div></Link>
     </StyledTemplate>
    
   </Layout>

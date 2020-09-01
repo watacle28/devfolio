@@ -11,7 +11,7 @@ module.exports = {
     author: "Cleopas T. Wangayi",
     twitterUsername: "@watacle28",
     image: "/twitter-img.png",//to do
-     //siteUrl: "watacle.netlify.app"
+    //  siteUrl: "watacle.netlify.app"
   },
   plugins: [
     `gatsby-transformer-sharp`,
@@ -44,7 +44,7 @@ module.exports = {
         //   contentTypes :  `projects`, `blogs`,
         //   singleType : `about`
         //  ONLY ADD TO ARRAY IF YOU HAVE DATA IN STRAPI !!!!
-        contentTypes: [`blogs`],
+        contentTypes: [`blogs`,`projects`],
         singleTypes: [],
       },
     },

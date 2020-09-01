@@ -1,138 +1,86 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FaHtml5, FaCss3, FaJs, FaReact } from 'react-icons/fa';
+import {frontEndSkills,BackEndSkills,BackEndTools,frontEndTools} from '../constants/skills'
+import Skill from './Skill';
 
 const StyledSkills = styled.section` 
 width: 100%;
-max-width:600px;
 margin: 2rem auto;
-    .skills__container{
+padding: 1rem;
+.skills__container{
  display: flex;
- flex-direction: column;
+width: 100%;
+justify-content: center;;
   text-align: center;
 }
-.skills__subtitle{
-  margin-bottom: 1rem;
+p{
+ margin-top: -1rem;
+  text-align: center;
 }
-.skills__text{
-  margin-bottom: 1rem;
+.front, .back{
+  flex:.5;
+  padding: 1rem;
+  h4{
+    text-align:center;
+  }
 }
-.skills__data{
+
+.tools{
+  max-width:500px;
+  margin: auto;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
-  position: relative;
-  font-weight: 400;
-  padding: .5rem 1rem;
-  margin-bottom: 2rem;
-  border-radius: .5rem;
-  box-shadow: 0 4px 25px rgba(14,36,49,.15);
+  div{
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    background: var(--faint);
+    padding: .2rem .5rem;
+    padding-bottom:0;
+    border-radius: var(--radius);
+    text-transform: capitalize;
+  }
+  span{
+    color: var(--primary-1);
+    margin-right: .5rem;
+  }
 }
-.skills__icon{
-  font-size: 2rem;
-  margin-right: 1rem;
-  
+h4{
+ 
+  text-align: left;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
 }
-.skills__names{
-  display: flex;
-  align-items: center;
- margin-bottom: .5rem;
- svg{
-   color: var(--primary-1);
-   opacity: .2;
- }
-}
-.skills__name{
-  margin-left: .5rem;
-}
-.skills__bar{
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  background-color:var(--primary-1);
-  height: .5rem;
-  border-radius: .5rem;
-  z-index: 1;
-}
-.skills__html{
-  width: 95%;
-}
-.skills__css{
-  width: 85%;
-}
-.skills__js{
-  width: 65%;
-}
-.skills__ux{
-  width: 85%;
-}
-.skills__img{
-  border-radius: .5rem;
-}
+
+
 `
 
 function Skills() {
     return (
         <StyledSkills className="skills section" id="skills">
         <h2 className="section-title"><span>P</span>rofesional <span>S</span>kills</h2>
-
+        <p>Listed below are some of the technologies I use in frequently</p>
         <div className="skills__container">          
-            <div>
-              
-                <p className="skills__text">Below is some of the skills i have and an estimate of how much i know about each.</p>
-                <div className="skills__data">
-                    <div className="skills__names">
-                        <FaHtml5/>
-                        <span className="skills__name">HTML5</span>
-                    </div>
-                    <div className="skills__bar skills__html">
-
-                    </div>
-                    <div>
-                        <span className="skills__percentage">95%</span>
-                    </div>
-                </div>
-                <div className="skills__data">
-                    <div className="skills__names">
-                        <FaCss3/>
-                        <span className="skills__name">CSS3</span>
-                    </div>
-                    <div className="skills__bar skills__css">
-                        
-                    </div>
-                    <div>
-                        <span className="skills__percentage">85%</span>
-                    </div>
-                </div>
-                <div className="skills__data">
-                    <div className="skills__names">
-                        <FaJs/>
-                        <span className="skills__name">JAVASCRIPT</span>
-                    </div>
-                    <div className="skills__bar skills__js">
-                        
-                    </div>
-                    <div>
-                        <span className="skills__percentage">65%</span>
-                    </div>
-                </div>
-                <div className="skills__data">
-                    <div className="skills__names">
-                        <FaReact/>
-                        <span className="skills__name">REACTJS</span>
-                    </div>
-                    <div className="skills__bar skills__ux">
-                        
-                    </div>
-                    <div>
-                        <span className="skills__percentage">85%</span>
-                    </div>
-                </div>
+            <div className="front">
+              <h3>Front-End</h3>
+                 
+            {frontEndSkills.map(skill => <Skill key={skill.name} skill={skill}/>)}
+            <h4>Tools / softawares used</h4>
+               <div className="tools">
+               {frontEndTools.map(tool => <div><span>{tool.icon}</span>{tool.name}</div>)}
+               </div>
             </div>
+              <div className="back">
+                <h3>Back-End</h3>
+                {BackEndSkills.map(skill => <Skill key={skill.name} skill={skill}/>)}
+                <h4>Tools / softawares used</h4>
+               <div className="tools">
+               {BackEndTools.map(tool => <div><span>{tool.icon}</span>{tool.name}</div>)}
+               </div>
+                </div> 
             
-            <div>              
-                <img src="assets/img/work3.jpg" alt="" className="skills__img"/>
-            </div>
+           
         </div>
     </StyledSkills>
     )

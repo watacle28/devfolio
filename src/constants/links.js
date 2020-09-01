@@ -33,8 +33,8 @@ const data = [
   },
   {
     id:4,
-    text: "about",
-    url: "#about"
+    text: "about me",
+    url: "/about"
   },
   {
     id: 5,

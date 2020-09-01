@@ -76,7 +76,7 @@ const Sidebar = () => {
   const [active, setActive] = useState(true);
   return 	<div className={`nav ${active ? 'active': ''}`}>
   <Link to="/#contact" data-tooltip='Contact' className="nav-item nav-count-1"><BsChatSquareDots/></Link>
-  <Link to="/#about"  data-tooltip='About' className="nav-item nav-count-2"><FaRegUser/></Link>
+  <Link to="/about"  data-tooltip='About' className="nav-item nav-count-2"><FaRegUser/></Link>
   <Link to="/#blog"  data-tooltip='Blog' className="nav-item nav-count-3"><FaPenSquare/></Link>
   <Link to="/#projects"  data-tooltip='Projects' className="nav-item nav-count-4"><FaBriefcase/></Link>
   <Link  data-tooltip='Skills' to="/#skills" className="nav-item nav-count-5"><FaCode/></Link>
