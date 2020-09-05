@@ -6,6 +6,7 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 
 const StyledBlogs = styled.div`
   display: flex;
+ 
   flex-direction: column;
   width: 100%;
  justify-content: center;
@@ -13,7 +14,13 @@ const StyledBlogs = styled.div`
   display: flex;
   width: 100%;
  justify-content: center;
+ align-items: center;
  margin-bottom: 2rem;
+  flex-wrap: wrap;
+@media screen and (max-width: 768px) {
+  flex-direction: column;
+
+}
  }
  .theme_btn{
    width: max-content;
@@ -53,10 +60,10 @@ export const Blogs = () => {
   `)
  
   return    (
-     <StyledBlogs id='blog' className='section'> 
+     <StyledBlogs data-aos = 'fade-up' data-aos-delay='500'  id='blog' className='section'> 
     <h2 className='section-title'><span>L</span>atest <span>B</span>log <span>P</span>osts</h2>
 <div className="posts">
-{data.allStrapiBlogs.nodes.map(blog => <Blog blog={blog}/>)}
+{data.allStrapiBlogs.nodes.map(blog => <Blog key={blog.id} blog={blog}/>)}
 </div>
 <div className="theme_btn"> <Link to='/blog'>  See All Posts</Link></div>
   </StyledBlogs> 

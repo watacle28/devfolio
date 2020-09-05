@@ -3,7 +3,10 @@ import styled from 'styled-components';
 
 
 const StyledSkill = styled.div`
- max-width: 500px;
+
+ max-width: 450px;
+ min-width: 300px;
+ width: 100%;
  margin: auto;
   display: flex;
   justify-content: space-between;
@@ -15,7 +18,9 @@ const StyledSkill = styled.div`
   border: 1px solid var(--faint);
   border-radius: .5rem;
   box-shadow: var(--dark-shadow);
-
+ @media screen and (max-width: 500px){
+  min-width: 200px;
+ }
 .skills__icon{
   font-size: 2rem;
   margin-right: 1rem;

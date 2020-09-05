@@ -37,7 +37,8 @@ const Footer = () => {
 <div className="copyright">
 © <span> {new Date().getFullYear()}</span> watacle.dev
 </div>
-<p>Website built with <span ><TiHeartFullOutline/></span> by <a target ='_blank'  rel="noopener noreferrer" href="https://twitter.com/watacle28">Cleopas T. Wangayi</a> somewhere in Africa</p>
+<p>Website built with <span ><TiHeartFullOutline/></span> by <a target ='_blank'  rel="noopener noreferrer" href="https://twitter.com/watacle28"> Cleopas T. Wangayi </a><br/></p>
+{/* using <a href="http://gatsby.org" target="_blank" rel="noopener noreferrer">Gatsby</a> */}
 <Sidebar/>
   </StyledFooter>
 }

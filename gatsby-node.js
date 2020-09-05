@@ -10,6 +10,11 @@ exports.createPages = async ({ graphql, actions }) => {
           slug
         }
       }
+      projects: allStrapiProjects {
+        nodes {
+          slug
+        }
+      }
     }
   `)
 
@@ -20,6 +25,16 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         slug: blog.slug,
       },
+    })
+  })
+
+  result.data.projects.nodes.forEach(project => {
+    createPage({
+      path: `projects/${project.slug}`,
+      component: path.resolve(`src/templates/project-template.js`),
+      context: {
+        slug: project.slug
+      }
     })
   })
 }

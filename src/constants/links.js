@@ -13,14 +13,18 @@ const StyledPageLinks = styled.ul`
         transition: var(--transition);
       }
     }
+  
+@media screen and (max-width: 850px) {
+   display: none;
+}
 `
 
 const data = [
-  {
-    id: 1,
-    text: "home",
-    url: "/",
-  },
+  // {
+  //   id: 1,
+  //   text: "home",
+  //   url: "/",
+  // },
   {
     id: 2,
     text: "skills",
@@ -31,11 +35,7 @@ const data = [
     text: "projects",
     url: "#projects",
   },
-  {
-    id:4,
-    text: "about me",
-    url: "/about"
-  },
+ 
   {
     id: 5,
     text: "blog",
@@ -46,6 +46,12 @@ const data = [
     text: "contact",
     url: "#contact",
   },
+  
+   {
+    id:4,
+    text: "about me",
+    url: "/about"
+  }
 ]
 
 const tempLinks = data.map(link => {

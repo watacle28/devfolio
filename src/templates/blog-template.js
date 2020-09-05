@@ -1,5 +1,6 @@
-import React ,{useEffect} from "react"
+import React ,{useEffect, useRef} from "react"
 import { graphql, Link } from "gatsby"
+import {TimelineLite ,TweenMax, Power3} from 'gsap';
 import Image from 'gatsby-image'
 import styled from 'styled-components';
 import Layout from "../components/Layout"
@@ -9,7 +10,9 @@ import ReactMarkdown from "react-markdown"
 import { FaBackward } from "react-icons/fa";
 
 const StyledTemplate = styled.section`
+    visibility: hidden;
     width: 100%;
+   
     max-width: 800px;
     margin: 2rem auto;
     border: 1px solid var(--faint);
@@ -34,6 +37,7 @@ const StyledTemplate = styled.section`
       border-radius: var(--radius)
     }
     .theme_btn{
+      opacity: 0;
       display: block;
       width: max-content;
       margin: auto;
@@ -41,13 +45,41 @@ const StyledTemplate = styled.section`
 `
 
 const MyTemplate = ({data}) => {
+  let blog = useRef(null)
+   let btn = useRef(null) 
+  let tl = new TimelineLite({ delay: .8});
  useEffect(() => {
    if(data && data.blog.content){
      Prism.highlightAll()
    }
- }, [data && data.blog.content])
+
+    // //Ref defs
+    const img = blog.children[0];
+    const content = blog.children[1]
+   
+   console.log({btn});
+    //  //Remove initial flash
+      TweenMax.to(blog, 0, {css: {visibility: 'visible'}})
+      // TweenMax.to(btn, 2, {css: {visibility: 'visible'}})
+    
+   
+     tl.from(img, 1, {x: -1280, ease: Power3.easeOut},'Start')
+     tl.from(btn, 1, {x:-1280, ease: Power3.easeOut},.2)
+     tl.to(btn, 1.3, {opacity:1, ease: Power3.easeOut},.2)
+    
+    
+    //  //Content Animation
+     tl.staggerFrom([content.children[0],content.children[1],content.children[2],content.children[3]
+        ], 1, {
+       x: -1280,
+       opacity:0,
+       ease:Power3.easeOut,
+       delay: .8
+     }, .15, 'Start')
+   
+ }, [data && data.blog.content, tl])
   return <Layout>
-    <StyledTemplate>
+    <StyledTemplate ref={el => blog = el}>
     <Image fluid={data.blog.image.childImageSharp.fluid}/>
    <div className="post-body">
    <h2>{data.blog.title}</h2>
@@ -57,7 +89,7 @@ const MyTemplate = ({data}) => {
 
    </div>
    
-  <Link to='/#blog'><div className="theme_btn">Back</div></Link>
+  <Link to='/#blog'><div ref={el => btn = el} className="theme_btn">Back</div></Link>
     </StyledTemplate>
    
   </Layout>

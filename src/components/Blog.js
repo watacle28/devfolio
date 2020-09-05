@@ -7,15 +7,31 @@ import { Link } from "gatsby"
 
 const StyledBlog = styled.div`
 min-width: 300px;
+max-width: 400px;
 flex: calc(1 / 3);
-margin: 2rem;
+margin: 3rem;
+box-shadow: 0 3px 6px rgba(255,255,255,0.16), 0 3px 6px rgba(255,255,255,0.23);
+overflow: hidden;
+@media screen and (max-width: 1160px){
+	max-width: 500px;
+	width: 400px;
+}
+
+ /* @media screen and (max-width: 768px){
+	width: 400px;
+} */
+
+@media screen and (max-width: 500px) {
+  margin: 2rem auto 0 auto;
+  width: 100%;
+  min-width: 200px;
+}
  .card {
   position: relative;
-  height: 350px;
+  height: 380px;
   box-shadow: 0 0 20px rgba(var(--theme-white),0.1);
   border: 1px solid var(--faint);
   border-radius:var(--radius);
-  margin: 0 1rem;
   overflow: hidden;
   transition: all .5s ease-in-out;
 	&:hover{
@@ -109,8 +125,8 @@ opacity: .6;
 
 `
 const Blog = ({blog}) => {
-  console.log({blog});
-  return <StyledBlog>
+ 
+  return <StyledBlog   >
           <article className="card">
 		<header className="card__thumb">
 		<div className="img__container">

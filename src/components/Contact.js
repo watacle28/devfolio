@@ -2,9 +2,14 @@ import React from 'react';
 import styled from 'styled-components'
 
 const StyledContact = styled.section`
+
 position: relative;
 max-width : 600px;
 margin : 2rem auto;
+
+@media screen and (max-width: 500px) {
+  margin: .5rem;
+}
 .contact_container{
     display: flex;
     flex-direction: column;
@@ -12,7 +17,7 @@ margin : 2rem auto;
 }
     .contact__input{
   width: 100%;
-  background: transparent;
+  background: var(--faint);
   font-weight: 700;
   padding: 1rem;
   border-radius: .5rem;
@@ -41,16 +46,19 @@ margin : 2rem auto;
 
 function Contact() {
     return (
-        <StyledContact id="contact">
+        <StyledContact  data-aos = 'flip-down' id="contact">
            
                 <h2 className="section-title"> <span>C</span>ontact</h2>
 
                 <div className="contact__container ">
-                    <form action="" className="contact__form">
+                   
+                        <form method="post" netlify-honeypot="bot-field" data-netlify="true" name="contact" action='/success'>
+                        <input type="hidden" name="bot-field" />  
+                        <input type="hidden" name="form-name" value="contact" />
                         <input type="text" placeholder="Name" className="contact__input"/>
-                        <input type="mail" placeholder="Email" className="contact__input"/>
-                        <textarea name="" id="" cols="0" rows="5" className="contact__input" placeholder='your message'></textarea>
-                        <div type="button" value="Send" className="theme_btn contact_button">Send</div>
+                        <input type="email" placeholder="Email" className="contact__input"/>
+                        <textarea name="message" id="" cols="0" rows="5" className="contact__input" placeholder='your message'></textarea>
+                        <div type="submit" value="Send" className="theme_btn contact_button">Send</div>
                     </form>
                 </div>
             </StyledContact>

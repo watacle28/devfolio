@@ -6,12 +6,12 @@
 
 module.exports = {
   siteMetadata: {
-    title: "Cleopas T. Wangayi",
-    description: "This is a portfolio site for Cleopas T Wangayi , a javascript web developer . Its built with GatsbyJs",
+    siteTitle: "Cleopas T. Wangayi",
+    siteDescription: "This is a portfolio site for Cleopas T Wangayi , a fullstack javascript web developer . Its built with GatsbyJs",
     author: "Cleopas T. Wangayi",
     twitterUsername: "@watacle28",
-    image: "/twitter-img.png",//to do
-    //  siteUrl: "watacle.netlify.app"
+    image: "/twitter-img.png",
+    siteUrl: "http://watacle.netlify.app"
   },
   plugins: [
     `gatsby-transformer-sharp`,

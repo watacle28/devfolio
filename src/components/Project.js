@@ -1,30 +1,43 @@
 import React from "react"
-import PropTypes from "prop-types"
 import Image from "gatsby-image"
-import { FaGithubSquare, FaShareSquare, FaGlobe, FaGithub } from "react-icons/fa"
+import {  FaGithub } from "react-icons/fa"
+import {BiLinkExternal} from 'react-icons/bi'
 import styled from 'styled-components';
 import { useState } from "react";
 import { Link } from "gatsby";
 
 const StyledProject = styled.div` 
-
+ box-shadow: 0 3px 6px rgba(255,255,255,0.16), 0 3px 6px rgba(255,255,255,0.23);
 position: relative;
 display: inline-block;
-margin: 2rem;
- flex:1;
+margin: 3rem;
+min-width: 300px;
+max-width: 450px;
+flex: calc(1 / 3);
   perspective: 1000;
   text-align: left;
   transition: all 0.3s 0s ease-in;
-  z-index: 1;
+  z-index: 2;
+ 
+  @media screen and (max-width: 768px){
+	width: 100%;
+}
 
+@media screen and (max-width: 500px) {
+  margin: 2rem auto 0 auto;
+  width: 100%;
+  min-width: 200px;
+  &:last-of-type{
+    margin-bottom: 2rem;
+  }
+}
+ 
 &:hover {
 
 transform: scale(1.02);
 z-index: 20;
 }
-.card__image-holder{
-  opacity: .6;
-}
+
 
   .card-title {
     background: var(--theme-inactive);
@@ -32,6 +45,10 @@ z-index: 20;
     position: relative;
     z-index: 0;
     height: 110px;
+    
+@media screen and (max-width: 500px) {
+  height: max-content;
+}
     .toggle-info {
       border-radius: 32px;
       height: 32px;
@@ -126,7 +143,7 @@ a.btn:active {
     span{
       margin-right: .5rem;
       margin-bottom: .5rem;
-      background: var(--theme-inactive);
+      background: var(--faint);
       padding: .2rem .5rem;
       border-radius: 5px;
     }
@@ -190,10 +207,10 @@ const Project = ({project}) => {
   <div className="card__image-holder">
     <Image fluid={project.screenshot.childImageSharp.fluid}/>
    <div className="link">
-   <a href={project.livelink} target="_blank" rel="noopener noreferrer"><FaGlobe/></a>
+   <a href={project.livelink} target="_blank" rel="noopener noreferrer"><BiLinkExternal/></a>
    </div>
    <div className="link github">
-   <a href={project.github} target="_blank" rel="noopener noreferrer"><FaGithub/></a>
+   <a href={project.repo} target="_blank" rel="noopener noreferrer"><FaGithub/></a>
    </div>
    
   </div>
@@ -214,12 +231,12 @@ const Project = ({project}) => {
     <div className="card-description">
      <h4>Technologies used</h4>
     <div className="techs">
-{project.Stack.map((item,i)=> <span>{ item.tech}</span>)}
+{project.Stack.map((item,i)=> <span key={i}>{ item.tech}</span>)}
     </div>
     </div>
     <div className="card-flap flap2">
       <div className="card-actions">
-        <Link to='/projects' className="btn">Read more</Link>
+        <Link to={`/projects/${project.slug}`} className="btn">Read more</Link>
       </div>
     </div>
   </div>

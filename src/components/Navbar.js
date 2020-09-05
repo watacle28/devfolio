@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import logo from "../assets/logo.png"
 import { FaAlignRight } from "react-icons/fa"
 import PageLinks from "../constants/links"
+import { Link } from "gatsby";
 
 const StyledNav = styled.div`
  
@@ -18,7 +19,9 @@ const StyledNav = styled.div`
   justify-content: space-between;
   z-index: 200;
 
-  /* background: var(--theme-bg-1); */
+  .logo{
+   overflow: hidden;
+  }
   .nav-center {
   width: 90vw;
   max-width: 1170px;
@@ -76,17 +79,17 @@ const StyledNav = styled.div`
   }
 }
 
-@media screen and (min-width: 992px) {
-  .navbar {
-    background: transparent;
-  }
+@media screen and (max-width: 500px) {
+  
 }
  
 `
 const Navbar = () => {
   return (
     <StyledNav>
-    <img src={logo} alt="watacle"/>
+    <div className="logo">
+   <Link to='/'> <img src={logo} alt="watacle"/></Link>
+    </div>
     <PageLinks/>
   </StyledNav>
   )
