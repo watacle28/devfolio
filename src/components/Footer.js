@@ -7,8 +7,7 @@ import Sidebar from "./Sidebar";
 const StyledFooter = styled.div`
  
   height: 11rem;
- /* color: var(--theme-inactive); */
- 
+ overflow: hidden;
   display: flex;
   flex-direction:column;
   align-items: center;
@@ -35,7 +34,7 @@ const Footer = () => {
   return <StyledFooter>
    <SocialLinks />
 <div className="copyright">
-© <span> {new Date().getFullYear()}</span> watacle.dev
+© <span> {new Date().getFullYear()}</span> watacle
 </div>
 <p>Website built with <span ><TiHeartFullOutline/></span> by <a target ='_blank'  rel="noopener noreferrer" href="https://twitter.com/watacle28"> Cleopas T. Wangayi </a><br/></p>
 {/* using <a href="http://gatsby.org" target="_blank" rel="noopener noreferrer">Gatsby</a> */}

@@ -273,7 +273,7 @@ const hobbies = [{name:'Watching Soccer', icon:<GiSoccerBall/>},
         
             <div className="data">
           <span><FaUserAlt/></span>
-            <span>{new Date().getFullYear() - 1989}</span>
+            <span>Born {new Date().getFullYear() - 1989} years ago</span>
 
                       </div>
           <div className="data">

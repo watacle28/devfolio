@@ -271,7 +271,7 @@ svg:hover{
 
 @media screen and (max-width: 800px) {
   .section{
-    padding: 3rem 0;
+    padding: 3rem .5rem;
   }
 }
 .tags{

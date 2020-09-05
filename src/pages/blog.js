@@ -36,7 +36,7 @@ const BlogsPage = ({data}) => {
        delay: .8
      }, -.15, 'Start')
    
- }, [tl])
+ }, [])
   return <Layout>
     <h2  ref={el => title = el} className='section-title'><span>B</span>log</h2>
     <StyledBlogs data-aos='fade-up' ref={el => blog = el}>

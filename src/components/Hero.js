@@ -9,7 +9,7 @@ import {TimelineLite ,TweenMax, Power3} from 'gsap';
 // 
 const StyledHero = styled.div`
 visibility: hidden;  
-height: 95vh;  
+height: auto;  
    margin-top: -5rem;
   padding-top: 5rem;
   position: relative;
@@ -19,16 +19,22 @@ height: 95vh;
  padding-left: 4rem;
  padding-right: 4rem;
  overflow: hidden;
+ @media screen and (max-width: 500px){
+  height: 640px;
+
+}
  @media screen and (max-width: 800px) {
       flex-direction: column-reverse;
-      height: auto;
+     justify-content: center;
 }
+
  .social-links{
    width: 15rem;
    
 @media screen and (max-width: 500px) {
   width: max-content;
   font-size: 1rem;
+ 
 }
  }
  .left{
@@ -46,7 +52,7 @@ height: 95vh;
    h2{
      
 @media screen and (max-width: 800px) {
-  font-size: 3rem;
+  font-size: 1.5rem;
   
 }
      
@@ -70,15 +76,14 @@ height: 95vh;
         padding: 1rem;
 }
      @media screen and (max-width: 800px){
-       width: 250px;
-       height: 250px;
+       width: 150px;
+       height: 150px;
        padding:1rem;
        
      }
      
      @media screen and (max-width: 280px) {
-      width: 150px;
-       height: 150px;
+     
        padding:0
   
 }
@@ -162,14 +167,14 @@ const Hero = () => {
     .from(image, 1, { opacity:0, ease: Power3.easeInOut}, 1)
     .from(imgContainer, 1, {x: 500, opacity: 0, ease: Power3.easeOut}, 1.4)
   
-  }, [tl])
+  }, [])
   return(
     <StyledHero ref={el => app = el}>
      
      <div className="left" ref={el => heading = el}>
-       <h4>Hello, I'm</h4>
-       <h1>Cleopas</h1>
-       <h2>Fullstack Javascript <br/> Web Developer</h2>
+       <h4>Hi, I'm</h4>
+       <h1>Cleopas ,</h1>
+       <h2>A Fullstack Javascript <br/> Web Developer</h2>
       
         <SocialLinks />
       

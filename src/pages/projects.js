@@ -42,7 +42,7 @@ const ProjectsPage = ({data}) => {
        delay: .8
      }, .15, 'Start')
    
- }, [tl])
+ }, [])
   return <Layout>
     <h2 ref={el => title = el} className='section-title'>My <span>P</span>rojects</h2>
     <StyledProjects ref={el => projects = el}>

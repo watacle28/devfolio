@@ -7,19 +7,20 @@ import { Link } from "gatsby"
 
 const StyledBlog = styled.div`
 min-width: 300px;
-max-width: 400px;
+max-width: 450px;
 flex: calc(1 / 3);
 margin: 3rem;
 box-shadow: 0 3px 6px rgba(255,255,255,0.16), 0 3px 6px rgba(255,255,255,0.23);
 overflow: hidden;
 @media screen and (max-width: 1160px){
 	max-width: 500px;
-	width: 400px;
+
 }
 
- /* @media screen and (max-width: 768px){
-	width: 400px;
-} */
+ @media screen and (max-width: 768px){
+	width: 100%;
+	max-width: 450px;
+}
 
 @media screen and (max-width: 500px) {
   margin: 2rem auto 0 auto;

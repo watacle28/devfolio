@@ -42,10 +42,10 @@ const Layout = ({ children }) => {
        tl.from(links, 0.1, {y: -120, ease: Power3.easeOut})
        
      .from(links.children[0], 1, {y: -120, opacity: 0, ease: Power3.easeOut}, .1)
-     .from(logo,1, {x:-400,opacity:0, ease: Power3.easeIn},.2)
-     .from(footer.children[0],1, {x:-400,opacity:0, ease: Power3.easeIn},.2)
-     .from(footer.children[1],1, {x:-400,opacity:0, ease: Power3.easeIn},.2)
-     .from(footer.children[2],1, {x:-400,opacity:0, ease: Power3.easeIn},.2)
+     .from(logo,1, {x:-400,opacity:0, ease: Power3.easeIn},.1)
+     .from(footer.children[0],1, {y:-40,opacity:0, ease: Power3.easeIn},.2)
+     .from(footer.children[1],1, {x: 400,opacity:0, ease: Power3.easeIn},.4)
+     .from(footer.children[2],1, {x:-400,opacity:0, ease: Power3.easeIn},.6)
      .from(links.children[1], 1, {y: -120, opacity: 0, ease: Power3.easeOut}, .2)
      .from(links.children[2], 1, {y: -120, opacity: 0, ease: Power3.easeOut}, .3)
      .from(links.children[3], 1, {y: -120, opacity: 0, ease: Power3.easeOut}, .4)
@@ -62,7 +62,7 @@ const Layout = ({ children }) => {
        }
     
     
-  }, [tl])
+  }, [])
   return (
     <StyledLayout ref={el => nav = el}>
       <SEO/>

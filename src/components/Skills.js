@@ -26,8 +26,8 @@ svg{
  flex-wrap: wrap;
 width: 100%;
 justify-content: center;;
-  text-align: center;
-  
+text-align: center;
+padding:.5rem;  
 @media screen and (max-width: 768px) {
   flex-direction: column;
 }
@@ -84,13 +84,7 @@ h4{
 h3{
   margin-top: 1.5rem;
 }
-.section{
- 
-@media screen and (max-width: 500px) {
-padding: 0;
- 
-}
-}
+
 
 `
 
@@ -98,10 +92,10 @@ function Skills() {
   
 
     return (
-        <StyledSkills  className="skills section " id="skills">
+        <StyledSkills  className="skills section" id="skills">
         <h2 className="section-title"><span>P</span>rofesional <span>S</span>kills</h2>
         <p>Listed below are some of the technologies I use frequently</p>
-        <div className="skills__container">          
+        <div className="skills__container ">          
             <div data-aos = 'fade-right' className="front">
               <h3>Front-End</h3>
                  

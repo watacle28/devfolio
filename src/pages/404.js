@@ -20,7 +20,7 @@ const Error = () => {
   return <Layout><StyledError>
     <h1>404</h1>
     <p>You are in the endgame mate , not safe at all</p>
-    <div className="theme_btn">Go back Home</div> 
+    <Link to='/'><div className="theme_btn">Go back Home</div></Link> 
     </StyledError></Layout>
 }
 
