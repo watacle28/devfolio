@@ -452,7 +452,7 @@ Sidebar
 }
 
 .nav-item::before{
-  opacity:1;
+  opacity:0;
   content: attr(data-tooltip);
   position: absolute;
   left: -5rem;
@@ -466,7 +466,7 @@ Sidebar
   width:80px;
   transition: all 1s cubic-bezier(.68, 1.55, .265, 1)
 }
-.nav-item:hover::before{
+.nav.active .nav-item::before{
   opacity: 1;
 }
 .nav.active .nav-count-1 {
