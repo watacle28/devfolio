@@ -44,35 +44,35 @@ margin : 2rem auto;
 }
 `
 //
-function encode(data) {
-  return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&')
-}
+// function encode(data) {
+//   return Object.keys(data)
+//     .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+//     .join('&')
+// }
 
 function Contact() {
-  const [state, setState] = React.useState({name:'',email:'', message:'',bot:''})
+//   const [state, setState] = React.useState({name:'',email:'', message:'',bot:''})
 
-  const handleChange = (e) => {
-    setState({ ...state, [e.target.name]: e.target.value })
-    console.log(e.target.value);
-  }
-console.log({state})
-  const handleSubmit = (e) => {
-    e.preventDefault()
+//   const handleChange = (e) => {
+//     setState({ ...state, [e.target.name]: e.target.value })
+//     console.log(e.target.value);
+//   }
+// console.log({state})
+//   const handleSubmit = (e) => {
+//     e.preventDefault()
     
-    const form = e.target
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({
-        'form-name': form.getAttribute('name'),
-        ...state,
-      }),
-    })
-      .then(() => navigate(form.getAttribute('action')))
-      .catch((error) => alert(error))
-  }
+//     const form = e.target
+//     fetch('/', {
+//       method: 'POST',
+//       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+//       body: encode({
+//         'form-name': form.getAttribute('name'),
+//         ...state,
+//       }),
+//     })
+//       .then(() => navigate(form.getAttribute('action')))
+//       .catch((error) => alert(error))
+//   }
     return (
         <StyledContact  data-aos = 'flip-down' id="contact">
            
@@ -80,12 +80,17 @@ console.log({state})
 
                 <div className="contact__container ">
                    
-                        <form method="post" onSubmit={handleSubmit}  netlify-honeypot="bot-field" data-netlify="true" name="contact" action='/success/'>
-                        <input type="hidden" name="bot-field" onChange={handleChange} value={state.bot} />  
-                        <input type="hidden" name="form-name" value="contact" />
-                        <input type="text" placeholder="Name" name='name' value={state.name} onChange={handleChange} className="contact__input"/>
-                        <input type="email" placeholder="Email" name='email' value={state.email} onChange={handleChange} className="contact__input"/>
-                        <textarea name="message" id="" cols="0" value={state.message} onChange={handleChange} rows="5" className="contact__input" placeholder='your message'></textarea>
+                        <form 
+                        method="post"  
+                        netlify-honeypot="bot-field" 
+                        data-netlify="true" 
+                        name="contact"
+                        action='/success'>
+                        <input type="hidden" name="bot-field"  />  
+                        <input type="hidden" name="contact" value="contact" />
+                        <input type="text" placeholder="Name" name='name'className="contact__input"/>
+                        <input type="email" placeholder="Email" name='email' className="contact__input"/>
+                        <textarea name="message" id="" cols="0"  rows="5" className="contact__input" placeholder='your message'></textarea>
                         <div type="submit" value="Send" className="theme_btn contact_button">Send</div>
                     </form>
                 </div>

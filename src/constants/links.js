@@ -33,13 +33,13 @@ const data = [
   {
     id: 3,
     text: "projects",
-    url: "#projects",
+    url: "/projects",
   },
  
   {
     id: 5,
     text: "blog",
-    url: "#blog",
+    url: "/blog",
   },
   {
     id: 6,

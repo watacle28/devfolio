@@ -1,11 +1,13 @@
-import React from 'react';
+import React,{useRef,useEffect} from 'react';
 import styled from 'styled-components';
+import {TimelineLite ,TweenMax, Power3, from} from 'gsap';
 import {frontEndSkills,BackEndSkills,BackEndTools,frontEndTools} from '../constants/skills'
 import Skill from './Skill';
 
 
 
 const StyledSkills = styled.section` 
+visibility: hidden;
 width: 100%;
 margin: 2rem auto;
 padding: 1rem;
@@ -89,10 +91,28 @@ h3{
 `
 
 function Skills() {
-  
+  let skills = useRef(null)
+
+  let tl = new TimelineLite({ delay: .8});
+
+  useEffect(() => {
+    TweenMax.to(skills, 0, {css: {visibility: 'visible'}})
+
+    tl.staggerFrom([
+        skills.children[0],
+        skills.children[1],
+        skills.children[2]
+      ], 1, {
+      y: 160,
+      opacity:0,
+      ease:Power3.easeOut,
+      delay: .8
+    }, .15)
+  },[])
+
 
     return (
-        <StyledSkills  className="skills section" id="skills">
+        <StyledSkills ref={el => skills = el} className="skills section" id="skills">
         <h2 className="section-title"><span>P</span>rofesional <span>S</span>kills</h2>
         <p>Listed below are some of the technologies I use frequently</p>
         <div className="skills__container ">          
