@@ -4,6 +4,7 @@ import Layout from "../components/Layout"
 import Project from '../components/Project'
 import {TimelineLite ,TweenMax, Power3} from 'gsap';
 import { graphql } from "gatsby"
+import SEO from "../components/SEO";
 
 const StyledProjects = styled.section`
      visibility: hidden;
@@ -44,6 +45,7 @@ const ProjectsPage = ({data}) => {
    
  }, [])
   return <Layout>
+    <SEO title='Projects' description='A collection of my work, enjoy!!!'/>
     <h2 ref={el => title = el} className='section-title'>My <span>P</span>rojects</h2>
     <StyledProjects ref={el => projects = el}>
     {data.allStrapiProjects.nodes.map(project => <Project project={project}/>)}

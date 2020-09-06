@@ -4,9 +4,8 @@ import {TimelineLite ,TweenMax, Power3, from} from 'gsap';
 import Aos from 'aos'
 import 'aos/dist/aos.css';
 import Navbar from "./Navbar"
-import Sidebar from "./Sidebar"
 import Footer from "./Footer"
-import SEO from "./SEO";
+
 const StyledLayout = styled.main` 
  max-width: var(--max-width);
  margin : 0 auto; 
@@ -65,7 +64,6 @@ const Layout = ({ children }) => {
   }, [])
   return (
     <StyledLayout ref={el => nav = el}>
-      <SEO/>
      <Navbar />
      {/* <Sidebar/> */}
    <div className="children">

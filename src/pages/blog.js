@@ -4,6 +4,7 @@ import {TimelineLite ,TweenMax, Power3} from 'gsap';
 import Layout from "../components/Layout"
 import { graphql } from "gatsby"
 import Blog from "../components/Blog"
+import SEO from "../components/SEO";
 
 const StyledBlogs = styled.section`
   visibility: hidden;
@@ -38,6 +39,7 @@ const BlogsPage = ({data}) => {
    
  }, [])
   return <Layout>
+    <SEO title='Blog' description='I write down my thoughts and ideas here'/>
     <h2  ref={el => title = el} className='section-title'><span>B</span>log</h2>
     <StyledBlogs data-aos='fade-up' ref={el => blog = el}>
     {data.allStrapiBlogs.nodes.map(blog => <Blog  blog={blog}/>)}

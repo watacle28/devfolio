@@ -8,6 +8,7 @@ import Layout from "../components/Layout"
  import Prism from 'prismjs'
 import ReactMarkdown from "react-markdown"
 import { FaBackward } from "react-icons/fa";
+import SEO from "../components/SEO";
 
 const StyledTemplate = styled.section`
     visibility: hidden;
@@ -79,6 +80,7 @@ const MyTemplate = ({data}) => {
    
  }, [data && data.blog.content, tl])
   return <Layout>
+    <SEO title={data.blog.title} description={data.blog.desc} article={data.blog.content}/>
     <StyledTemplate ref={el => blog = el}>
     <Image fluid={data.blog.image.childImageSharp.fluid}/>
    <div className="post-body">

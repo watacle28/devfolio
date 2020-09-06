@@ -7,6 +7,7 @@ import Layout from "../components/Layout"
 import {FaGithub} from 'react-icons/fa'
 import {BiLinkExternal} from 'react-icons/bi'
 import ReactMarkdown from "react-markdown"
+import SEO from '../components/SEO';
 
 const StyledProject = styled.div`
 visibility: hidden;
@@ -144,6 +145,7 @@ const ProjectTemplate = ({data}) => {
     }, [tl])
     return (
         <Layout>
+            <SEO title={Name} description={desc}/>
             <StyledProject ref={el => project = el}>
                 <h2 className='section-title'><span>{Name[0]}</span>{Name.substr(1)}</h2>
                 <div className="container">

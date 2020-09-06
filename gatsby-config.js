@@ -8,8 +8,17 @@ module.exports = {
   siteMetadata: {
     siteTitle: "Cleopas T. Wangayi",
     siteDescription: "This is a portfolio site for Cleopas T Wangayi , a fullstack javascript web developer . Its built with GatsbyJs",
-    author: "Cleopas T. Wangayi",
+    author: {
+      name: "Cleopas T. Wangayi",
+      minibio: "Self taught fullstack web developer working primarily with React, NodeJs, MongoDb, Express, Graphql and Restful Apis"
+    },
     twitterUsername: "@watacle28",
+    keywords: [
+      'Fullstack Javascript Developer',
+      'React Developer',
+      'NodeJs developer',
+      
+    ],
     image: "/twitter-img.png",
     siteUrl: "http://watacle.netlify.app"
   },

@@ -12,6 +12,7 @@ import SocialLinks from "../constants/socialLinks"
 import {TimelineLite ,TweenMax, Power3} from 'gsap';
 import { TiLocation } from "react-icons/ti";
 import {MdEmail} from 'react-icons/md'
+import SEO from "../components/SEO";
 
 const StyledTitle = styled.h2`
    margin: 0 auto;
@@ -257,6 +258,7 @@ const hobbies = [{name:'Watching Soccer', icon:<GiSoccerBall/>},
    
  }, [tl])
   return <Layout>
+    <SEO title='About'/>
       <StyledTitle ref={el => title = el}>Hello <span role='image'>👋</span>, I'm<span className="self"> Cleopas T. Wangayi</span></StyledTitle>
     <StyledAbout ref={el => about = el}>
       <div className="image">
