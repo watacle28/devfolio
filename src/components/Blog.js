@@ -23,7 +23,7 @@ overflow: hidden;
 }
 
 @media screen and (max-width: 500px) {
-  margin: 2rem auto 0 auto;
+  margin: 3rem auto 0 auto;
   width: 100%;
   min-width: 200px;
 }

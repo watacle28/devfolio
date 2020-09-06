@@ -121,6 +121,10 @@ p {
   h4 {
     line-height: 1;
   }
+  button{
+    background: transparent;
+    border: none;
+  }
 }
 img{
   max-width: 100%;
@@ -352,7 +356,7 @@ svg:hover{
 .social-links {
   margin-top: 2rem;
   margin-bottom: .5rem;
-
+ 
   display: flex;
   justify-content: space-between;
   

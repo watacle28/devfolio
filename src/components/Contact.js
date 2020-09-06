@@ -43,36 +43,36 @@ margin : 2rem auto;
     
 }
 `
-//
-// function encode(data) {
-//   return Object.keys(data)
-//     .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-//     .join('&')
-// }
+
+function encode(data) {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
 
 function Contact() {
-//   const [state, setState] = React.useState({name:'',email:'', message:'',bot:''})
+  const [state, setState] = React.useState({name:'',email:'', message:'',bot:''})
 
-//   const handleChange = (e) => {
-//     setState({ ...state, [e.target.name]: e.target.value })
-//     console.log(e.target.value);
-//   }
-// console.log({state})
-//   const handleSubmit = (e) => {
-//     e.preventDefault()
+  const handleChange = (e) => {
+    setState({ ...state, [e.target.name]: e.target.value })
+    console.log(e.target.value);
+  }
+console.log({state})
+  const handleSubmit = (e) => {
+    e.preventDefault()
     
-//     const form = e.target
-//     fetch('/', {
-//       method: 'POST',
-//       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-//       body: encode({
-//         'form-name': form.getAttribute('name'),
-//         ...state,
-//       }),
-//     })
-//       .then(() => navigate(form.getAttribute('action')))
-//       .catch((error) => alert(error))
-//   }
+    const form = e.target
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': form.getAttribute('name'),
+        ...state,
+      }),
+    })
+      .then(() => navigate(form.getAttribute('action')))
+      .catch((error) => alert(error))
+  }
     return (
         <StyledContact  data-aos = 'flip-down' id="contact">
            
@@ -91,7 +91,7 @@ function Contact() {
                         <input type="text" placeholder="Name" name='name'className="contact__input"/>
                         <input type="email" placeholder="Email" name='email' className="contact__input"/>
                         <textarea name="message" id="" cols="0"  rows="5" className="contact__input" placeholder='your message'></textarea>
-                        <div type="submit" value="Send" className="theme_btn contact_button">Send</div>
+                        <button type="submit" value="Send" className="theme_btn contact_button">Send</button>
                     </form>
                 </div>
             </StyledContact>

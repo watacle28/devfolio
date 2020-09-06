@@ -256,7 +256,7 @@ const hobbies = [{name:'Watching Soccer', icon:<GiSoccerBall/>},
  delay: .8
 }, -.15, 'Start')
    
- }, [tl])
+ }, [])
   return <Layout>
     <SEO title='About'/>
       <StyledTitle ref={el => title = el}>Hello <span role='image'>👋</span>, I'm<span className="self"> Cleopas T. Wangayi</span></StyledTitle>

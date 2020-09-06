@@ -8,9 +8,14 @@ import SEO from "../components/SEO";
 
 const StyledBlogs = styled.section`
   visibility: hidden;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      overflow: hidden;
+      padding: .5rem;
+      @media screen and (max-width: 500px){
+            flex-direction: column;
+        }
 
 `
 const BlogsPage = ({data}) => {

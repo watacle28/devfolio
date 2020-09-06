@@ -30,8 +30,7 @@ const Layout = ({ children }) => {
     const links = nav.children[0].children[1];
     const vana = nav.children[1]
     const footer = nav.children[2]
-    
-    console.log({vana, footer});
+  
     
     // //Remove initial flash
     TweenMax.to(nav, 0, {css: {visibility: 'visible'}})

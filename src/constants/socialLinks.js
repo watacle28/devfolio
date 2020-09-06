@@ -16,7 +16,7 @@ const data = [
   {
     id: 2,
     icon: <FaLinkedin className="social-icon"></FaLinkedin>,
-    url: "https://www.linkein.com/cwangayi",
+    url: "https://www.linkedin.com/in/cleopas-tawanda-wangayi-103a93109/",
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const data = [
   {
     id: 4,
     icon: <FaBehanceSquare className="social-icon"></FaBehanceSquare>,
-    url: "https://www.behance.com/watacle",
+    url: "https://www.behance.net/sirwatacle1628",
   },
   {
     id: 5,

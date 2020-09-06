@@ -126,7 +126,7 @@ const ProjectTemplate = ({data}) => {
       TweenMax.to(links, .1 ,{css: {visibility: 'visible'}})
       
      //coa button animations
-     tl.from(h2, 1, {y: -80, ease: Power3.easeOut},'Start')
+     tl.from(h2, 1, {y: -200, ease: Power3.easeOut},'Start')
       tl.from(img, 1, {x: -1280, ease: Power3.easeOut},'Start')
       .from(links, 1, { x:-400, ease: Power3.easeOut})
       .from(github, 1.2, {opacity: 0, ease: Power3.easeOut}, .2,)

@@ -11,7 +11,8 @@ const StyledProjects = styled.section`
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      overflow: hidden;
+     margin-bottom: 5rem;
+      padding: .5rem;
       @media screen and (max-width: 500px){
             flex-direction: column;
         }

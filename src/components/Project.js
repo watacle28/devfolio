@@ -24,7 +24,7 @@ flex: calc(1 / 3);
 }
 
 @media screen and (max-width: 500px) {
-  margin: 2rem auto 0 auto;
+  margin: 3rem auto 0 auto;
   width: 100%;
   min-width: 200px;
   &:last-of-type{
@@ -109,6 +109,7 @@ z-index: 20;
   text-decoration: none;
   transition: all 0.1s 0s ease-out;
   color: white;
+  z-index: 100000;
 }
 
  a.btn:hover {
@@ -154,6 +155,8 @@ a.btn:active {
   	box-shadow: 0 2px 0px 0 rgba(0,0,0,0.075);
     padding: 10px 15px 20px;
     text-align: center;
+    cursor: pointer;
+   
   }
   
   .card-flap {
@@ -163,16 +166,16 @@ a.btn:active {
     width: 100%;
     transform-origin: top;
     transform: ${props => props.show ? 'rotateX(0)': 'rotateX(-90deg)'};
-   
+    z-index: ${props => props.show ? 100 : 0}
   }
   .flap1 {
     transition: all 0.3s 0s ease-out;
     
-    z-index: -1;
+    z-index: ${props => props.show ? 100 : -1};
   }
   .flap2 {
     transition: all 0.3s .1s ease-out;
-    z-index: -2;
+    z-index: ${props => props.show ? 90 : -2};
   }
   
 .link{
