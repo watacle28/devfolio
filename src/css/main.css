@@ -19,8 +19,8 @@ Variables
 --theme-inactive:#0A0914;
 --faint : rgba(255,255,255,.05);
 --white: #edf2f4ff;
---primary-2: #f10f9d;
---primary-1: #f10f4b;
+--primary-2:  #11998e;
+--primary-1:  #38ef7d;
 --ff-primary: "Poppins", sans-serif;
 --ff-secondary: "Open Sans", sans-serif;
 --transition: all .4s linear;
@@ -31,7 +31,7 @@ Variables
 
 --max-width: 1440px;
 --fixed-width: 700px;
---theme-gradient-1: linear-gradient(180deg, #f81f01 0%, #ee076e 50%);
+--theme-gradient-1: linear-gradient(180deg, var(--primary-1) 0%, var(--primary-2) 50%);
 --theme-gradient: linear-gradient(145deg, var(--primary-1) 0%, var(--primary-2) 50%, var(--primary-1) 100% );
 --theme-border: .5px solid var(--theme-bg-2);
 }

@@ -298,12 +298,12 @@ const hobbies = [{name:'Watching Soccer', icon:<GiSoccerBall/>},
 
          </p>
              <p>
-            I started learning web development 2 years ago with the help of Youtube videos by 
+            I started learning web development in 2017 with the help of Youtube videos by
              <span><a href="https://www.youtube.com/user/TechGuyWeb" target="_blank" rel="noopener noreferrer"> Brad Traversy</a></span> and now I can build fullstack web applications using React and NodeJs(using Restful or Graphql) .
              Currently I am learning VueJs.
              </p>
              <p>
-               I am currently available for freelance work or full-time employment anywhere in the world 
+                 I am currently employed as web developer at <a href="https://www.oldstreetsolutions.com/" target="_blank" rel="noopener noreferrer">>Old Street solutions</a> where I am envolved in the development of Custom charts for Jira
              </p>
              <p className='watacle'>In case you are wondering why my logo spells out <span> Watacle </span> ,
               its just a cocky amalgamation of my surname <span>  Wa</span>ngayi,  
