@@ -1,4 +1,4 @@
-This repository, named "devfolio", is a personal web portfolio project created by the user "watacle28". The project is built using Gatsby.js, a popular React-based framework for building static websites and web applications.
+This repository, named "devfolio", is a personal web portfolio project created by Cleopas T. Wangayi. The project is built using Gatsby.js, a popular React-based framework for building static websites and web applications.
 
 Main Function Points
 Provides a personal web portfolio showcasing the developer's work and skills
@@ -15,6 +15,8 @@ CSS: Used for styling the website
 React Icons: A library of customizable icons for React applications
 License
 The project is licensed under the MIT license, which is a permissive open-source license that allows for free use, modification, and distribution of the software.
+
+Summary by AI
 
 ## Setup Notes
 
